@@ -87,7 +87,7 @@ hr {
 }
 
 mark {
-  color: #000;
+  color: #00008B;
   background: #ff0;
 }
 
@@ -218,7 +218,7 @@ table {
 
 @media print {
   * {
-    color: #000 !important;
+    color: #00008B !important;
     text-shadow: none !important;
     background: transparent !important;
     box-shadow: none !important;
