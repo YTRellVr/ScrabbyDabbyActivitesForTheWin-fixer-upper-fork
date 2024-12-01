@@ -1743,7 +1743,7 @@ table th[class*="col-"] {
 .table > thead > tr.success > th,
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
-  background-color: #dff0d8;
+  background-color: #00008B;
 }
 
 .table-hover > tbody > tr > td.success:hover,
