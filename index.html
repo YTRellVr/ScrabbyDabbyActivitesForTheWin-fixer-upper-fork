@@ -1,193 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Scrabbles Ultimate Sigma Website For Knick Knacks Doo Dads And Ultimate Fun</title>
-	  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Add custom CSS here -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-  
-    <div id="wrapper">
-      
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="#">Start Bootstrap</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Shortcuts</a></li>
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-          
-      <!-- Page content -->
-      <div id="page-content-wrapper">
-        <div class="content-header">
-          <h1>
-            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-            Simple Sidebar
-          </h1>
-        </div>
-        <!-- Keep all page content within the page-content inset div! -->
-        <div class="page-content inset">
-          <div class="row">
-            <div class="col-md-12">
-             <html>
-    <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed HTML with Buttons</title>
+    <title>Grid Button Template</title>
     <style>
-        /* Optional styling to ensure buttons and iframe are visible */
-        iframe {
-            width: 100%;
-            height: 500px;
-            display: none; /* Initially hidden */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
         }
-        button {
-            margin: 10px;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .button {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid #444;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .button .name {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .button img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
-
-    <!-- Button to trigger loading the iframe content -->
-    <button id="loadButton">Load Content</button>
-
-    <!-- Button to trigger fullscreen for the iframe -->
-    <button id="fullscreenButton" style="display: none;">Fullscreen</button>
-
-    <!-- The iframe where the content will be embedded -->
-    <iframe id="embeddedContent" src="" frameborder="0"></iframe>
-
-    <script>
-        // When the "Load Content" button is clicked, load the content into the iframe
-        document.getElementById('loadButton').addEventListener('click', function() {
-            var iframe = document.getElementById('embeddedContent');
-            iframe.style.display = 'block'; // Show the iframe
-            iframe.src = 'btd5.html'; // The HTML file you want to load
-
-            // Show the fullscreen button once the iframe is displayed
-            document.getElementById('fullscreenButton').style.display = 'inline-block';
-        });
-
-        // When the "Fullscreen" button is clicked, make the iframe fullscreen
-        document.getElementById('fullscreenButton').addEventListener('click', function() {
-            var iframe = document.getElementById('embeddedContent');
-
-            // Check if the browser supports fullscreen API
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
-        });
-    </script>
-
-</body>
-</html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed HTML with Buttons</title>
-    <style>
-        /* Optional styling to ensure buttons and iframe are visible */
-        iframe {
-            width: 100%;
-            height: 500px;
-            display: none; /* Initially hidden */
-        }
-        button {
-            margin: 10px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Button to trigger loading the iframe content -->
-    <button id="loadButton">Load Content</button>
-
-    <!-- Button to trigger fullscreen for the iframe -->
-    <button id="fullscreenButton" style="display: none;">Fullscreen</button>
-
-    <!-- The iframe where the content will be embedded -->
-    <iframe id="embeddedContent" src="" frameborder="0"></iframe>
-
-    <script>
-        // When the "Load Content" button is clicked, load the content into the iframe
-        document.getElementById('loadButton').addEventListener('click', function() {
-            var iframe = document.getElementById('embeddedContent');
-            iframe.style.display = 'block'; // Show the iframe
-            iframe.src = 'btd5.html'; // The HTML file you want to load
-
-            // Show the fullscreen button once the iframe is displayed
-            document.getElementById('fullscreenButton').style.display = 'inline-block';
-        });
-
-        // When the "Fullscreen" button is clicked, make the iframe fullscreen
-        document.getElementById('fullscreenButton').addEventListener('click', function() {
-            var iframe = document.getElementById('embeddedContent');
-
-            // Check if the browser supports fullscreen API
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
-        });
-    </script>
-
-</body>
-</html>
-
-                    </body>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <p class="well"><img src="IMG_0287.jpg" alt="cat" style="width:500px;height:600px;"></p>
-            </div>
-          </div>
+    <div class="container">
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 1 clicked!'); return false;">Button 1</a></div>
         </div>
-      </div>
-      
-    
-	
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-
-    <!-- Custom JavaScript for the Menu Toggle -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-    </script>
-  </body>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 2 clicked!'); return false;">Button 2</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 3 clicked!'); return false;">Button 3</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 4 clicked!'); return false;">Button 4</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 5 clicked!'); return false;">Button 5</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 6 clicked!'); return false;">Button 6</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 7 clicked!'); return false;">Button 7</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 8 clicked!'); return false;">Button 8</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 9 clicked!'); return false;">Button 9</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 10 clicked!'); return false;">Button 10</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 11 clicked!'); return false;">Button 11</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 12 clicked!'); return false;">Button 12</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 13 clicked!'); return false;">Button 13</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 14 clicked!'); return false;">Button 14</a></div>
+        </div>
+        <div class="button">
+            <img src="" alt="Background Image">
+            <div class="name"><a href="#" onclick="alert('Button 15 clicked!'); return false;">Button 15</a></div>
+        </div>
+    </div>
+</body>
 </html>
