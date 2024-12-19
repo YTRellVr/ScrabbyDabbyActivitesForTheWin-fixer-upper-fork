@@ -62,59 +62,65 @@
             <div class="col-md-4">
                 <p class="well">
                     <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Embed HTML on Button Click</title>
-                        <style>
-                            #embeddedContent {
-                                display: none;
-                                width: 100%;
-                                height: 400px;
-                                border: 1px solid #ccc;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <h1>Bloons Tower Defense 5</h1>
-
-                        <!-- Button to trigger the loading -->
-<button id="loadButton">Play</button>
-
-<!-- Button to trigger fullscreen -->
-<button id="fullscreenButton" style="display:none;">Fullscreen</button>
-
-<!-- The iframe where the embedded HTML will be loaded -->
-<iframe id="embeddedContent" src="" frameborder="0" style="display:none; width: 100%; height: 400px;"></iframe>
-
-<script>
-    // When the 'Play' button is clicked, load the content into the iframe
-    document.getElementById('loadButton').addEventListener('click', function () {
-        var iframe = document.getElementById('embeddedContent');
-        iframe.style.display = 'block'; // Show the iframe
-
-        // Set the src attribute to load the embedded HTML file
-        iframe.src = "btd5.html"; // The HTML file you want to load
-
-        // Show the fullscreen button after iframe is displayed
-        document.getElementById('fullscreenButton').style.display = 'inline-block';
-    });
-
-    // When the 'Fullscreen' button is clicked, make the iframe fullscreen
-    document.getElementById('fullscreenButton').addEventListener('click', function () {
-        var iframe = document.getElementById('embeddedContent');
-
-        // Check if the browser supports fullscreen API
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) { // Firefox
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) { // IE/Edge
-            iframe.msRequestFullscreen();
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed HTML with Buttons</title>
+    <style>
+        /* Optional styling to ensure buttons and iframe are visible */
+        iframe {
+            width: 100%;
+            height: 500px;
+            display: none; /* Initially hidden */
         }
-    });
-</script>
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to trigger loading the iframe content -->
+    <button id="loadButton">Load Content</button>
+
+    <!-- Button to trigger fullscreen for the iframe -->
+    <button id="fullscreenButton" style="display: none;">Fullscreen</button>
+
+    <!-- The iframe where the content will be embedded -->
+    <iframe id="embeddedContent" src="" frameborder="0"></iframe>
+
+    <script>
+        // When the "Load Content" button is clicked, load the content into the iframe
+        document.getElementById('loadButton').addEventListener('click', function() {
+            var iframe = document.getElementById('embeddedContent');
+            iframe.style.display = 'block'; // Show the iframe
+            iframe.src = 'embeddedContent.html'; // The HTML file you want to load
+
+            // Show the fullscreen button once the iframe is displayed
+            document.getElementById('fullscreenButton').style.display = 'inline-block';
+        });
+
+        // When the "Fullscreen" button is clicked, make the iframe fullscreen
+        document.getElementById('fullscreenButton').addEventListener('click', function() {
+            var iframe = document.getElementById('embeddedContent');
+
+            // Check if the browser supports fullscreen API
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+
+</body>
+</html>
 
                     </body>
                 </p>
