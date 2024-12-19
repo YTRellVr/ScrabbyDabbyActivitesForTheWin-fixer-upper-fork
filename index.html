@@ -49,41 +49,64 @@
           <div class="row">
             <div class="col-md-12">
              <html>
-    <head>
-        <style>
-            body, html {
-                margin: 0;
-                padding: 0;
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed HTML with Buttons</title>
+    <style>
+        /* Optional styling to ensure buttons and iframe are visible */
+        iframe {
+            width: 100%;
+            height: 500px;
+            display: none; /* Initially hidden */
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to trigger loading the iframe content -->
+    <button id="loadButton">Load Content</button>
+
+    <!-- Button to trigger fullscreen for the iframe -->
+    <button id="fullscreenButton" style="display: none;">Fullscreen</button>
+
+    <!-- The iframe where the content will be embedded -->
+    <iframe id="embeddedContent" src="" frameborder="0"></iframe>
+
+    <script>
+        // When the "Load Content" button is clicked, load the content into the iframe
+        document.getElementById('loadButton').addEventListener('click', function() {
+            var iframe = document.getElementById('embeddedContent');
+            iframe.style.display = 'block'; // Show the iframe
+            iframe.src = 'btd5.html'; // The HTML file you want to load
+
+            // Show the fullscreen button once the iframe is displayed
+            document.getElementById('fullscreenButton').style.display = 'inline-block';
+        });
+
+        // When the "Fullscreen" button is clicked, make the iframe fullscreen
+        document.getElementById('fullscreenButton').addEventListener('click', function() {
+            var iframe = document.getElementById('embeddedContent');
+
+            // Check if the browser supports fullscreen API
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
             }
-        </style>
-    </head>
-    <body>
-        <div style="width:100%;height:100%;max-width:100%">
-            <div id="game"></div>
-        </div>
-        <script>
-            EJS_player = "#game";
-            EJS_core = "CORE_NAME";
-            EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
-            EJS_gameUrl = "games/mariokart64.zip";
-        </script>
-        <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
-    </body>
+        });
+    </script>
+
+</body>
 </html>
-            </div>
-            <div class="col-md-6">
-              <p class="well">If you have any game suggestions, i dont care!</p>
-            </div>
-            <div class="col-md-6">
-              <p class="well">Heres a picture of my cat!.</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well"><img src="IMG_0287.jpg" alt="cat" style="width:500px;height:600px;"></p>
-            </div>
-            <div class="col-md-4">
-                <p class="well">
-                    <head>
-                        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
