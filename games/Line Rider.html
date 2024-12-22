@@ -43,7 +43,7 @@
     </style>
 </head>
 <body>
-    <iframe id="iframe" src="rider.html"></iframe>
+    <iframe id="iframe" src="rider.html" allow="autoplay"></iframe>
     <button onclick="toggleFullscreen()">Fullscreen</button>
 
     <script>
@@ -59,6 +59,14 @@
                 alert('Fullscreen is not supported in this browser.');
             }
         }
+
+        // Optional: Auto-play sound when the iframe loads
+        document.getElementById('iframe').addEventListener('load', () => {
+            const iframeWindow = document.getElementById('iframe').contentWindow;
+            if (iframeWindow) {
+                iframeWindow.postMessage('play', '*');
+            }
+        });
     </script>
 </body>
 </html>
