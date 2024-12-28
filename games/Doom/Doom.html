@@ -43,7 +43,7 @@
     </style>
 </head>
 <body>
-    <iframe id="iframe" src="index(3).html" allow="autoplay"></iframe>
+    <iframe id="iframe" src="index(3).html" allow="autoplay; microphone;"></iframe>
     <button onclick="toggleFullscreen()">Fullscreen</button>
 
     <script>
@@ -60,12 +60,9 @@
             }
         }
 
-        // Optional: Auto-play sound when the iframe loads
-        document.getElementById('iframe').addEventListener('load', () => {
-            const iframeWindow = document.getElementById('iframe').contentWindow;
-            if (iframeWindow) {
-                iframeWindow.postMessage('play', '*');
-            }
+        // Ensure iframe is interactive and can play sound
+        window.addEventListener('message', (event) => {
+            console.log('Message from iframe:', event.data);
         });
     </script>
 </body>
